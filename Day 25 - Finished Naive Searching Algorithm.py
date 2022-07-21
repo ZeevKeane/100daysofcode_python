@@ -29,3 +29,27 @@ pattern_search(friends_intro, "idil", "ideal", False)
 pattern_search(friends_intro, "zzz ", "")
 pattern_search(friends_intro, "syntacs", "syntax")
 pattern_search(friends_intro, "languuUuage", "language")
+
+
+
+#codewars
+def to_camel_case(text):
+    #your code here
+    if len(text) == 0:
+        return text
+    else:
+        camelCasedText = []
+        camelCasedText.append(text[0])
+        text_without_1st = text[1:]
+        counter = 0
+        for char in text_without_1st:
+            if char == "-" or char == "_":
+                counter += 1
+                continue
+            else:
+                if counter == 1:
+                    camelCasedText.append(char.upper())
+                    counter -= 1
+                else:
+                    camelCasedText.append(char)
+    return "".join(camelCasedText)
